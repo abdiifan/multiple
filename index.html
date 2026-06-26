@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#07090d" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#f0f3f8" media="(prefers-color-scheme: light)" />
-  <title>PharmaTrack — Inventory Management</title>
+  <title>Stock MultipleTrack — Inventory Management</title>
 
   <!-- ① Critical inline styles: brand-icon, landing-logo — prevent layout shift -->
   <style>
@@ -50,20 +50,6 @@
     <div>
       <div class="brand-name">Stock-Multiple</div>
       <div class="brand-sub">Inventory Management</div>
-    </div>
-  </div>
-
-  <!-- ── Global Search ── -->
-  <div id="global-search-bar">
-    <div id="global-search-wrap">
-      <input id="global-search-input" type="search" placeholder="Search material code or name…"
-        autocomplete="off" autocorrect="off" spellcheck="false" aria-label="Search inventory" />
-      <div id="global-search-tags">
-        <span class="gsb-tag gsb-tag-stock">Stock</span>
-        <span class="gsb-tag gsb-tag-transit">Transit</span>
-        <button id="global-search-btn" type="button" aria-label="Run search">🔍 Search</button>
-        <button id="global-search-clear" class="gsb-clear" type="button" aria-label="Clear search">✕ Clear</button>
-      </div>
     </div>
   </div>
 
@@ -149,15 +135,6 @@
 
 <!-- ═══════════════════════════════ MAIN ═══════════════════════════════ -->
 <main id="main">
-
-  <!-- Global search results panel (slides in above main) -->
-  <div id="global-search-results-panel" style="display:none">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem">
-      <span style="font-size:0.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em">Search Results</span>
-      <button id="global-search-results-close" style="background:none;border:none;color:var(--dim);cursor:pointer;font-size:1rem;padding:0 0.25rem" aria-label="Close search results">✕</button>
-    </div>
-    <div id="global-search-results"></div>
-  </div>
 
   <!-- ── LANDING ── -->
   <div id="landingView" role="main">
@@ -363,17 +340,9 @@
       <div class="section-header">QC Quantity &amp; Value by Plant</div>
       <div id="chart-qc-plant"></div>
     </div>
-    <div class="qc-tab-bar" role="tablist" aria-label="QC views">
-      <button class="qc-tab-btn" data-tab="items" role="tab" aria-selected="true"  aria-controls="qc-tab-items" style="padding:0.5rem 1.1rem;border:none;border-bottom:2px solid var(--blue);background:transparent;color:var(--blue);font-weight:700;font-size:0.82rem;cursor:pointer;margin-bottom:-2px;font-family:inherit;white-space:nowrap;flex-shrink:0">📋 Detailed QC Items</button>
-      <button class="qc-tab-btn" data-tab="days"  role="tab" aria-selected="false" aria-controls="qc-tab-days"  style="padding:0.5rem 1.1rem;border:none;border-bottom:2px solid transparent;background:transparent;color:var(--muted);font-weight:500;font-size:0.82rem;cursor:pointer;margin-bottom:-2px;font-family:inherit;white-space:nowrap;flex-shrink:0">⏱ Days in Quality</button>
-    </div>
     <div id="qc-tab-items" class="qc-tab-panel" role="tabpanel" style="display:block;padding-top:1rem">
       <div id="qc-dl-row" style="display:flex;gap:0.6rem;justify-content:flex-end;margin-bottom:0.5rem"></div>
       <div id="qc-table-wrap"></div>
-    </div>
-    <div id="qc-tab-days" class="qc-tab-panel" role="tabpanel" style="display:none;padding-top:1rem">
-      <div id="qc-days-dl-row" style="display:flex;gap:0.6rem;justify-content:flex-end;margin-bottom:0.5rem"></div>
-      <div id="qc-days-wrap"></div>
     </div>
   </section>
 
